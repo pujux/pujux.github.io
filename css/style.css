@@ -80,8 +80,12 @@ abbr[title] {
 }
 
 @media (min-width: 380px) and (max-width: 568px){
+  .full-on-mobiles {
+    width: 100% !important;
+  }
+
   header .unit.half {
-    width: 50% !important;
+    width: 50%;
   }
 }
 
@@ -137,7 +141,6 @@ nav li {
 @media (min-width: 380px) and (max-width: 568px){
   .contact {
     display: inline-block;
-    width: 100px;
   }
 }
 
