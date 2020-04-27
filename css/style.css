@@ -1,0 +1,201 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #807066;
+  background: #fff5e5;
+}
+
+body {
+  padding-top: 3rem;
+}
+
+a {
+  color: #f83;
+  text-decoration: none;
+}
+
+p a {
+  color: #444;
+  border-bottom: 1px solid #f83;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+abbr[title] {
+  border-bottom: 1px solid #ddd;
+  cursor: help;
+}
+
+/* Header */
+
+.avatar,
+.id {
+  display: block;
+  vertical-align: middle;
+}
+
+.avatar img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px #fff, 0 3px 10px rgba(0,0,0,.1);
+  vertical-align: middle;
+}
+
+.id {
+  text-align: center;
+  padding: 5px 15px;
+}
+
+.name,
+.handle {
+  display: block;
+  line-height: 1em;
+}
+
+.name {
+  font-weight: 600;
+  text-shadow: 0 1px 0 #fff;
+  letter-spacing: -.5px;
+  color: #807066;
+  font-size: .6em;
+}
+
+.handle {
+  font-size: .45em;
+}
+
+@media (max-width: 568px){
+  .id {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 568px){
+  header .unit.half {
+    width: 50% !important;
+  }
+}
+
+@media (min-width: 569px){
+  .avatar,
+  .id {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+header .grid {
+  padding-top: 2em;
+}
+
+header h1,
+header ul,
+header li {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  margin-top: 1.75rem;
+}
+
+nav li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.contact a {
+  font-size: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  color: #807066;
+  text-shadow: 0 1px 0 #fff;
+  -webkit-transition: color .25s;
+  transition: color .25s;
+}
+
+.contact i {
+  width: 40px;
+  display: block;
+}
+
+.contact a:hover {
+  color: #f83;
+}
+
+@media (min-width: 380px) and (max-width: 568px){
+  .contact {
+    display: inline-block;
+    width: 100px;
+  }
+}
+
+/* Intro */
+
+
+.intro {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.intro p {
+  display: inline;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.intro p + p {
+  margin-left: .1em;
+}
+
+@media (min-width: 600px){
+  .intro p {
+    font-size: 2.5em;
+  }
+}
+
+/* Footer */
+
+footer {
+  font-size: 16px;
+}
+
+/* Article list */
+
+.articles h2 {
+  margin: 0;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.article-summary {
+  padding-top: .5em;
+  margin-bottom: 2em;
+}
+
+.article-summary h3 {
+  margin: 0;
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: 300;
+}
+
+.article-meta {
+  font-size: 1.17em;
+}
+
+@media screen and (max-width: 568px) {
+  nav {
+    margin-top: 0;
+  }
+}
