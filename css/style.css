@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
@@ -15,6 +19,10 @@ body {
   padding-top: 3rem;
 }
 
+.main-link {
+  color: #807066;
+}
+
 a {
   color: #f83;
   text-decoration: none;
@@ -23,6 +31,20 @@ a {
 p a {
   color: #444;
   border-bottom: 1px solid #f83;
+}
+
+h3 {
+  padding-top: 15px;
+  text-transform: uppercase;
+}
+
+h3 a {
+  border-bottom: 2px solid #444;
+}
+
+.work-item:nth-child(2n) a {
+  color: #444;
+  border-bottom: 2px solid #f83;
 }
 
 h1 {
@@ -52,7 +74,7 @@ abbr[title] {
 
 .id {
   text-align: center;
-  padding: 5px 15px;
+  padding: 15px;
 }
 
 .name,
@@ -62,6 +84,7 @@ abbr[title] {
 }
 
 .name {
+  padding: 5px 0;
   font-weight: 600;
   text-shadow: 0 1px 0 #fff;
   letter-spacing: -.5px;
@@ -97,10 +120,6 @@ abbr[title] {
   }
 }
 
-header .grid {
-  padding-top: 2em;
-}
-
 header h1,
 header ul,
 header li {
@@ -109,7 +128,7 @@ header li {
 }
 
 nav {
-  margin-top: 1.75rem;
+  margin-top: 2rem;
 }
 
 nav li {
@@ -144,26 +163,43 @@ nav li {
   }
 }
 
-/* Intro */
+/* Section */
 
 
-.intro {
+section {
   margin-top: 3rem;
   margin-bottom: 4rem;
 }
 
-.intro p {
+section h1{
+  margin-top: 0;
+  font-size: 1.8em;
+}
+
+section + section > div > div {
+  margin-top: 1em;
+}
+
+section + section h1 {
+  margin-top: .75em;
+}
+
+section p {
   display: inline;
   font-size: 1.5em;
   font-weight: 300;
 }
 
-.intro p + p {
+section p + p {
   margin-left: .1em;
 }
 
 @media (min-width: 600px){
-  .intro p {
+  section h1{
+    font-size: 3em;
+  }
+
+  section p {
     font-size: 2.5em;
   }
 }
@@ -201,4 +237,19 @@ footer {
   nav {
     margin-top: 0;
   }
+  .sections {
+    margin-top: -2em;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.up-link {
+  margin: 0;
+}
+
+.up-link > a {
+  border-bottom: none;
 }
