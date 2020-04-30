@@ -1,9 +1,9 @@
-<html lang="en-US"><head>
+<html lang="en-US">
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="application-name" content="Julian Pufler • puf17640"/>
-  <meta name="msapplication-TileColor" content="#FFF5E5" />
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+  <meta name="msapplication-TileColor" content="#f83" />
   <title>Julian Pufler • puf17640</title>
   <link rel="icon" type="image/png" href="https://s.gravatar.com/avatar/51367191998933725fdc08aa851bd733?s=64" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet" type="text/css">
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/7f3d40c980.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+</head>
 <body class="wrap">
   <header class="animated fadeInDown">
     <div class="grid">
@@ -20,7 +21,7 @@
         <h1>
           <a href="#">
             <div class="avatar">
-              <img src="https://s.gravatar.com/avatar/51367191998933725fdc08aa851bd733?s=32">
+              <img src="https://s.gravatar.com/avatar/51367191998933725fdc08aa851bd733?s=16">
             </div>
             <div class="id">
               <span class="name">Julian Pufler</span>
@@ -55,15 +56,15 @@
       </nav>
     </div>
   </header>
-
   <div class="sections animated fadeInUp">
     <section>
       <div class="grid">
         <div id="intro" class="unit whole center-on-mobiles">
           <h1><a class="main-link" href="#intro">#intro</a></h1>
-          <p>Hi, I’m Julian.</p><br>
-          <p>I'm from Austria and</p><br class="hide-on-mobiles">
-          <p>I love coding and web design.</p>
+          <p>Hi, I’m <strong>Julian</strong>.</p><br>
+          <p>I'm from <strong>Austria</strong> and </p><br class="hide-on-mobiles">
+          <p>I love <strong>coding</strong> and <strong>web design</strong>.</p><br>
+          <p>Say <strong>Hello</strong>!</p>
         </div>
       </div>
     </section>
@@ -73,19 +74,15 @@
           <h1><a class="main-link" href="#work">#work</a></h1>
           <div class="work-item">
             <h3 class="link"><a href="https://pufler.dev/oreno-ramen/v2/">Oreno Ramen</a></h3>
-            <small class="desc">Landing page for ramen shop in Vienna<br><strong>(February 2020)</strong></small>
+            <small class="desc">Oreno Ramen is a small ramen shop in Vienna. <br class="hide-on-mobiles">I designed this landing page because I really loved their food, <br class="hide-on-mobiles">the staff and their little dog. <br class="hide-on-mobiles">I got the pictures from a friend that worked there as a cook.<br><strong>(February 2020)</strong></small>
           </div>
           <div class="work-item">
             <h3 class="link"><a href="https://github.com/novelcovid/api">NovelCOVID/API</a></h3>
-            <small class="desc">Open-Source COVID API<br><strong>(March 2020)</strong></small>
-          </div>
-          <div class="work-item">
-            <h3 class="link"><a href="https://covidoverview.com">COVID Overview</a></h3>
-            <small class="desc">COVID Data Visualization<br><strong>(March 2020)</strong></small>
+            <small class="desc">NovelCOVID/API is an Open-Source project I started contributing to. <br class="hide-on-mobiles">I am now one of the maintainers, a member of the project team <br class="hide-on-mobiles">and also act as support for developers using the API.<br><strong>(March 2020)</strong></small>
           </div>
           <div class="work-item">
             <h3 class="link"><a href="https://coviddetail.com">COVID Detail</a></h3>
-            <small class="desc">COVID Data Dashboard<br><strong>(March 2020)</strong></small>
+            <small class="desc">A COVID19 Dashboard I started working on while being at home.<br class="hide-on-mobiles">This was the first time I used Chart.js and Icons8, <br class="hide-on-mobiles">and I also learned lots of new stuff about EJS.<br><strong>(March 2020)</strong></small>
           </div>
           <div class="work-item">
             <h3 class="link"><a href="https://covid19dailydigest.com">COVID19 Daily Digest</a></h3>
@@ -96,6 +93,10 @@
             <small class="desc">Javscript API Wrapper for NovelCOVID/API<br><strong>(March 2020)</strong></small>
           </div>
           <div class="work-item">
+            <h3 class="link"><a href="https://covidoverview.com">COVID Overview</a></h3>
+            <small class="desc">COVID Data Visualization<br><strong>(March 2020)</strong></small>
+          </div>
+          <div class="work-item">
             <h3 class="link"><a href="#">More soon!</a></h3>
             <small class="desc">I am working on some private projects which I might share soon.</small>
           </div>
@@ -103,7 +104,6 @@
       </div>
     </section>
   </div>
-
   <footer class="animated fadeInUp">
     <div class="grid">
       <div class="unit whole text-center">
@@ -114,15 +114,14 @@
         </h3>
       </div>
       <div class="unit whole text-center">
-        <p>This site is powered by <a href="http://pages.github.com/">GitHub Pages</a>, and&nbsp;its design is&nbsp;<a href="https://github.com/puf17640/puf17640.github.io">open&nbsp;source</a>.</p>
+        <p>This site is powered by <a href="http://pages.github.com/">GitHub Pages</a>.<br>The design is&nbsp;<a href="https://github.com/puf17640/puf17640.github.io">Open Source</a>.</p>
       </div>
     </div>
   </footer>
 
   <script>
     $(document).ready(() => {
-      
-      $('.avatar > img').attr('src', $('.avatar > img').attr('src').replace(/\?s=\d+$/, '?s=128'))
+      $('.avatar > img').attr('src', $('.avatar > img').attr('src').replace(/\?s=\d+$/, '?s=256'))
     })
   </script>
 </body>
