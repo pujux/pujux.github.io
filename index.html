@@ -61,10 +61,10 @@
       <div class="grid">
         <div id="intro" class="unit whole center-on-mobiles">
           <h1><a class="main-link" href="#intro">#intro</a></h1>
-          <p>Hi, I’m <strong>Julian</strong>.</p><br>
-          <p>I'm from <strong>Austria</strong> and </p><br class="hide-on-mobiles">
-          <p>I love <strong>coding</strong> and <strong>web design</strong>.</p><br>
-          <p>Say <strong>Hello</strong>!</p>
+          <p>Hi, I’m Julian.</p><br>
+          <p>I'm from Austria and </p><br class="hide-on-mobiles">
+          <p>I love coding and web design.</p><br>
+          <p>Say Hello!</p>
         </div>
       </div>
     </section>
@@ -74,7 +74,7 @@
           <h1><a class="main-link" href="#work">#work</a></h1>
           <div class="work-item">
             <h3 class="link"><a href="https://pufler.dev/oreno-ramen/v2/">Oreno Ramen</a></h3>
-            <small class="desc">Oreno Ramen is a small ramen shop in Vienna. <br class="hide-on-mobiles">I designed this landing page because I really loved their food, <br class="hide-on-mobiles">the staff and their little dog. <br class="hide-on-mobiles">I got the pictures from a friend that worked there as a cook.<br><strong>(February 2020)</strong></small>
+            <small class="desc">Oreno Ramen is a small ramen shop in Vienna. <br class="hide-on-mobiles">I designed this landing page because I really loved their food, <br class="hide-on-mobiles">the staff and their little dog. I got the pictures from a friend that worked there as a cook.<br><strong>(February 2020)</strong></small>
           </div>
           <div class="work-item">
             <h3 class="link"><a href="https://github.com/novelcovid/api">NovelCOVID/API</a></h3>
@@ -86,15 +86,15 @@
           </div>
           <div class="work-item">
             <h3 class="link"><a href="https://covid19dailydigest.com">COVID19 Daily Digest</a></h3>
-            <small class="desc">COVID Newsletter for all countries<br><strong>(March 2020)</strong></small>
+            <small class="desc">COVID19DailyDigest is a daily newsletter about COVID in a selected country.<br class="hide-on-mobiles">My first time using SendGrid to send mails, it was an awesome experience! <br class="hide-on-mobiles">This was also my first COVID related project.<br><strong>(March 2020)</strong></small>
           </div>
           <div class="work-item">
             <h3 class="link"><a href="https://npmjs.com/covidapi">covidapi</a></h3>
-            <small class="desc">Javscript API Wrapper for NovelCOVID/API<br><strong>(March 2020)</strong></small>
+            <small class="desc">While working on the NovelCOVID API, I felt the need for a fast and easy to use <br class="hide-on-mobiles">API wrapper for my projects and I knew the official one wasn't kept up to date. <br class="hide-on-mobiles">So I wrote my own, and I update it everytime the API changes.<br><strong>(March 2020)</strong></small>
           </div>
           <div class="work-item">
             <h3 class="link"><a href="https://covidoverview.com">COVID Overview</a></h3>
-            <small class="desc">COVID Data Visualization<br><strong>(March 2020)</strong></small>
+            <small class="desc">This is a basic visualization of the COVID numbers per country. I had the idea <br class="hide-on-mobiles">late at night after working on the API codebase and just quickly hacked it. <br class="hide-on-mobiles">The hardest part was getting the font size right and making it work on both desktop and mobile.<br><strong>(March 2020)</strong></small>
           </div>
           <div class="work-item">
             <h3 class="link"><a href="#">More soon!</a></h3>
@@ -119,9 +119,10 @@
     </div>
   </footer>
 
-  <script>
+  <script id="imgScript">
     $(document).ready(() => {
       $('.avatar > img').attr('src', $('.avatar > img').attr('src').replace(/\?s=\d+$/, '?s=256'))
+      $('#imgScript').remove()
     })
   </script>
 </body>
