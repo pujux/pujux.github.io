@@ -1,18 +1,19 @@
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="application-name" content="Julian Pufler • puf17640"/>
   <meta name="msapplication-TileColor" content="#f83" />
+  <meta name="description" content="Julian Pufler is a software developer and web designer from Vienna, Austria">
   <title>Julian Pufler • puf17640</title>
   <link rel="icon" type="image/png" href="https://s.gravatar.com/avatar/51367191998933725fdc08aa851bd733?s=64" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/gridism.css">
-  <link rel="stylesheet" href="css/animation.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://kit.fontawesome.com/7f3d40c980.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+  <link rel="stylesheet" href="css/normalize.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/gridism.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/animation.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900&display=swap" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+  <script async src="https://kit.fontawesome.com/7f3d40c980.js" crossorigin="anonymous"></script>
 </head>
 <body class="wrap">
   <header class="animated fadeInDown">
@@ -21,7 +22,7 @@
         <h1>
           <a href="#">
             <div class="avatar">
-              <img src="https://s.gravatar.com/avatar/51367191998933725fdc08aa851bd733?s=16">
+              <img src="https://s.gravatar.com/avatar/51367191998933725fdc08aa851bd733?s=16" alt="gravatar">
             </div>
             <div class="id">
               <span class="name">Julian Pufler</span>
@@ -45,11 +46,6 @@
           <li>
             <a href="https://instagram.com/le.buff">
               <i class="fab fa-instagram-square"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/julianpufler">
-              <i class="fab fa-twitter-square"></i>
             </a>
           </li>
           <li>
@@ -148,7 +144,7 @@
       </div>
     </div>
   </footer>
-
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
   <script id="imgScript">
     $(document).ready(() => {
       $('.avatar > img').attr('src', $('.avatar > img').attr('src').replace(/\?s=\d+$/, '?s=256'))
