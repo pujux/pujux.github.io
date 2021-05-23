@@ -47,6 +47,10 @@
 	flex-basis: 100%;
 }
 
+.infoContainer a, .infoContainer a:active {
+  color: #3494ff;
+}
+
 .image {
 	width: 55px;
 	height: 55px;

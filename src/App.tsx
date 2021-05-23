@@ -15,10 +15,10 @@ function App() {
         <AboutMe></AboutMe>
       </div>
       <div className={styles.item}>
-        <Projects></Projects>
+        <ContactMe></ContactMe>
       </div>
       <div className={styles.item}>
-        <ContactMe></ContactMe>
+        <Projects></Projects>
       </div>
       <div className={styles.item}>
         <Footer></Footer>
