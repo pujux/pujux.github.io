@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
         <meta
           name="description"
           content="I've been working with different startups and companies, developed one of the most used COVID APIs with a remote team, built a few personal projects and looked into many other things."
