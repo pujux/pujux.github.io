@@ -7,7 +7,7 @@ export default class Introduction extends React.Component {
 		return (
 			<>
 				<div className={styles.backgroundImage}>
-					<img alt="background" src={"/background.png"} />
+					<img alt="background" src={"/img/background.png"} />
 				</div>
 				<div className={styles.profilePicture}>
 					<img alt="Julian Pufler" src="https://avatars.githubusercontent.com/u/17516174?s=256" />
@@ -27,7 +27,7 @@ export default class Introduction extends React.Component {
 					<br /><br />
 					Thanks for visiting my website,
 					<br />
-					<img className={styles.signature} alt="signature" src={"/signature.png"} />
+					<img className={styles.signature} alt="signature" src={"/img/signature.png"} />
 				</div>
 			</>
 		);

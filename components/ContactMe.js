@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../assets/css/ContactMe.module.css';
+import styles from '../styles/ContactMe.module.css';
 
 export default class ContactMe extends React.Component {
 

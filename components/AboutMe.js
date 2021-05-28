@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../assets/css/AboutMe.module.css';
+import styles from '../styles/AboutMe.module.css';
 
 export default class AboutMe extends React.Component {
 

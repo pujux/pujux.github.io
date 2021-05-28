@@ -1,19 +1,13 @@
 import React, { Fragment } from "react";
-import styles from "../assets/css/Projects.module.css";
-import projectStyles from "../assets/css/ProjectItem.module.css";
-import gitBadgesLogo from "../assets/img/git-badges.svg";
-import diseaseShLogo from "../assets/img/disease-sh.png";
-import covidDetailLogo from "../assets/img/covid-detail.png";
-import orenoRamenLogo from "../assets/img/oreno-ramen.svg";
-import game420Logo from "../assets/img/420-game.png";
-import bscfeewtf from "../assets/img/bscfeewtf.png";
+import styles from "../styles/Projects.module.css";
+import ProjectItem from "./ProjectItem";
 
 const projects = [
   {
     title: "bscfee.wtf",
     description:
       "Check how much gas you have paid for transactions on the Binance Smart Chain just by connecting your wallet.",
-    logo: bscfeewtf,
+    logo: "/img/bscfeewtf.png",
     info: (
       <Fragment>
         Built using <a href="https://metamask.io">MetaMask</a>
@@ -28,7 +22,7 @@ const projects = [
     title: "git-badges",
     description:
       "This project is serving useful badges for your GitHub Profile README.",
-    logo: gitBadgesLogo,
+    logo: "/img/git-badges.svg",
     info: `Fully open source\n60k+ page views and thousands of users`,
     url: "https://badges.pufler.dev",
   },
@@ -36,7 +30,7 @@ const projects = [
     title: "disease.sh",
     description:
       "An open API for disease-related statistics, focused on COVID-19.",
-    logo: diseaseShLogo,
+    logo: "/img/disease-sh.png",
     info: (
       <Fragment>
         Over 45 billion requests served
@@ -52,7 +46,7 @@ const projects = [
   {
     title: "COVID Detail",
     description: "COVID19 Dashboard for both Desktop and Mobile",
-    logo: covidDetailLogo,
+    logo: "/img/covid-detail.png",
     info: (
       <Fragment>
         Built in under 5 hours
@@ -67,48 +61,16 @@ const projects = [
   {
     title: "Oreno Ramen",
     description: "Landing Page for a ramen shop in Vienna",
-    logo: orenoRamenLogo,
+    logo: "/img/oreno-ramen.svg",
     url: "https://pufler.dev/oreno-ramen/v2/",
   },
   {
     title: "420 Game",
     description: "Minigame zur Promotion eines Produktes von WARDA",
-    logo: game420Logo,
+    logo: "/img/420-game.png",
     url: "https://420game.at",
   },
 ];
-
-class ProjectItem extends React.Component {
-  render() {
-    return (
-      <a target="_blank" rel="noreferrer" href={this.props.url}>
-        <div className={projectStyles.container}>
-          <div className={projectStyles.frame}>
-            <div className={projectStyles.logoContainer}>
-              <div className={projectStyles.image}>
-                <img alt="logo" src={this.props.logo} />
-              </div>
-            </div>
-            <div className={projectStyles.titleContainer}>
-              <div className={projectStyles.header}>{this.props.title}</div>
-              <div className={projectStyles.content}>
-                {this.props.description}
-              </div>
-            </div>
-            {this.props.info && (
-              <div className={projectStyles.infoContainer}>
-                <div className={projectStyles.header}>Info</div>
-                <div className={projectStyles.content}>
-                  <span>{this.props.info}</span>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </a>
-    );
-  }
-}
 
 export default class Projects extends React.Component {
   render() {
