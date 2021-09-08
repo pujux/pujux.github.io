@@ -39,7 +39,7 @@ export default function Home() {
         <meta name="twitter:domain" content="pufler.dev" />
         <link
           rel="icon"
-          href="https://avatars.githubusercontent.com/u/17516174?s=32"
+          href="https://lean-coders.at/assets/img/team/julian.svg"
         />
         <title>Julian Pufler</title>
       </Head>
@@ -47,10 +47,10 @@ export default function Home() {
         <Introduction></Introduction>
       </div>
       <div className={styles.item}>
-        <AboutMe></AboutMe>
+        <ContactMe></ContactMe>
       </div>
       <div className={styles.item}>
-        <ContactMe></ContactMe>
+        <AboutMe></AboutMe>
       </div>
       <div className={styles.item}>
         <Projects></Projects>
@@ -58,6 +58,17 @@ export default function Home() {
       <div className={styles.item}>
         <Footer></Footer>
       </div>
+      <script
+        data-name="BMC-Widget"
+        data-cfasync="false"
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="puf17640"
+        data-description="Support me!"
+        data-color="#ff813f"
+        data-position="Right"
+        data-x_margin="18"
+        data-y_margin="18"
+      ></script>
     </div>
   );
 }
