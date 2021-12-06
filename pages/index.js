@@ -19,15 +19,15 @@ export default function Home() {
           content="julian pufler, pufler, julian, pufler.dev, web developer, designer, entrepreneur, front end, back end, full stack, developer, linkedin, instagram, facebook, twitter, github"
         />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="I've been working with different startups and companies, developed one of the most used COVID APIs with a remote team, built a few personal projects and looked into many other things."
         />
-        <meta itemprop="name" content="Julian Pufler" />
+        <meta itemProp="name" content="Julian Pufler" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Julian Pufler" />
         <meta property="og:title" content="Julian Pufler" />
         <meta
-          itemprop="og:description"
+          itemProp="og:description"
           content="I've been working with different startups and companies, developed one of the most used COVID APIs with a remote team, built a few personal projects and looked into many other things."
         />
         <meta name="twitter:card" content="summary" />

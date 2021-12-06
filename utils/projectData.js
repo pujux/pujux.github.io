@@ -2,6 +2,13 @@ import React, { Fragment } from "react";
 
 export default [
   {
+    title: "Metamask Approval Hygiene",
+    description:
+      "With the latest Badger exploit let's talk about Metamask approval hygiene.",
+    logo: "/img/hygiene.png",
+    url: "https://pufler.dev/metamask-approval-hygiene",
+  },
+  {
     title: "polyfee.wtf",
     description:
       "Check how much gas you have paid for transactions on the Polygon (MATIC) Network just by connecting your wallet.",
@@ -14,7 +21,7 @@ export default [
         <a href="https://polygonscan.com">PolygonScan</a> API
       </Fragment>
     ),
-    url: "https://bscfee.wtf",
+    url: "https://polyfee.wtf",
   },
   {
     title: "sysi",
