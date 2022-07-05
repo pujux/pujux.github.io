@@ -11,7 +11,7 @@ export default class Introduction extends React.Component {
         <div className={styles.profilePicture}>
           <img
             alt="Julian Pufler"
-            src="https://lean-coders.at/assets/img/team/julian.svg"
+            src="https://a.storyblok.com/f/127128/x/0b8f708d05/julian.svg"
           />
         </div>
         <div className={styles.header}>Hello, I'm Julian.</div>
