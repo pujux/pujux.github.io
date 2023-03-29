@@ -39,7 +39,7 @@ export default function Home() {
         <meta name="twitter:domain" content="pufler.dev" />
         <link
           rel="icon"
-          href="https://lean-coders.at/assets/img/team/julian.svg"
+          href="https://a.storyblok.com/f/127128/x/0b8f708d05/julian.svg"
         />
         <title>Julian Pufler</title>
       </Head>
