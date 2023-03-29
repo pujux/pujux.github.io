@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
 
 @layer base {
+  .cursor-newtab {
+    cursor: url('/images/new-tab.png') 10 10, pointer;
+  }
+
   /* #region  /**=========== Typography =========== */
   .h0 {
     @apply font-primary text-3xl font-bold md:text-5xl;
@@ -37,11 +41,16 @@
   /* #endregion  /**======== Typography =========== */
 
   .gradient-bg {
-    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+    background: linear-gradient(135deg, hsl(30, 33%, 99%), hsl(27, 35%, 83%));
+  }
+
+  .dark-gradient-bg {
+    background: linear-gradient(135deg, hsl(222, 47%, 5%), hsl(225, 44%, 9%));
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .gradient-bg {
+    .gradient-bg,
+    .dark-gradient-bg {
       background-size: 400% 400%;
       animation: animated-gradient-background 10s ease infinite;
     }
@@ -63,7 +72,7 @@
 @layer utilities {
   .animated-underline {
     background-image: linear-gradient(#33333300, #33333300),
-      linear-gradient(#000, #000);
+      linear-gradient(currentColor, currentColor);
     background-size: 100% 1px, 0 1px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;

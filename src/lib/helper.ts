@@ -4,6 +4,7 @@ type OpenGraphType = {
   templateTitle?: string;
   logo?: string;
 };
+
 export function openGraph({
   siteName,
   templateTitle,
@@ -20,18 +21,4 @@ export function openGraph({
   return `https://homepage-og.vercel.app/api/gradient?theme=dark&siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
     ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
   }`;
-}
-
-export function getFromLocalStorage(key: string): string | null {
-  if (typeof window !== 'undefined') {
-    return window.localStorage.getItem(key);
-  }
-  return null;
-}
-
-export function getFromSessionStorage(key: string): string | null {
-  if (typeof sessionStorage !== 'undefined') {
-    return sessionStorage.getItem(key);
-  }
-  return null;
 }
