@@ -37,7 +37,7 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
               'transition-all group-hover:-mt-1 group-hover:-rotate-[5deg] group-hover:scale-125',
               icon.darkModeInvert && 'dark:invert'
             )}
-            src={icon.base64}
+            src={'data:image/png;base64,' + icon.base64}
             alt={title + ' logo'}
             width={20}
             height={20}

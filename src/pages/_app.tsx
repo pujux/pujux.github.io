@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 
 import '@/styles/globals.css';
@@ -9,10 +9,18 @@ import Layout from '@/components/Layout';
 function MyApp({ Component, pageProps }: AppProps) {
   const [mode, setMode] = useState<'dark' | 'light'>('light');
 
+  useEffect(() => {
+    if (localStorage.getItem('mode') === 'dark') {
+      toggleDarkmode();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const toggleDarkmode = () => {
     const newMode = mode === 'dark' ? 'light' : 'dark';
     document.documentElement.classList.remove(mode);
     document.documentElement.classList.add(newMode);
+    localStorage.setItem('mode', newMode);
     setMode(newMode);
   };
 

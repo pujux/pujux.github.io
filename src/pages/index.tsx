@@ -1,3 +1,5 @@
+import { Client } from '@notionhq/client';
+import { InferGetStaticPropsType } from 'next';
 import {
   RiGithubFill,
   RiInstagramLine,
@@ -6,14 +8,44 @@ import {
 } from 'react-icons/ri';
 
 import clsxm from '@/lib/clsxm';
-import { projectData } from '@/lib/data';
 
 import UnderlineLink from '@/components/links/UnderlineLink';
 import NextImage from '@/components/NextImage';
 import ProjectCard from '@/components/ProjectCard';
 import Seo from '@/components/Seo';
 
-export default function HomePage() {
+// notion API is typed badly so I just used any here
+
+export async function getStaticProps() {
+  const notion = new Client({
+    auth: process.env.NOTION_TOKEN,
+  });
+  const page = (await notion.pages.retrieve({
+    page_id: '5673a213b29448369d351d9405f456ff',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  })) as any;
+
+  const blockRes = await notion.blocks.children.list({ block_id: page.id });
+
+  const blocks = await Promise.all(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    blockRes.results.map(async (r: any) =>
+      r.type !== 'child_database'
+        ? r
+        : await notion.databases.query({
+            database_id: r.id,
+            sorts: [{ timestamp: 'created_time', direction: 'ascending' }],
+          })
+    )
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return { props: { page, blocks: blocks as any[] } };
+}
+
+export default function HomePage({
+  page,
+  blocks,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Seo />
@@ -24,32 +56,51 @@ export default function HomePage() {
               <NextImage
                 width={128}
                 height={128}
-                src='/images/profile.png'
+                src={page.cover?.file?.url ?? '/images/profile.png'}
                 alt='Profile picture'
                 useSkeleton
               />
             </div>
             <h1 className='h0 md:h1 md:max-w-[75%]'>
-              Hi, I'm Julian{' '}
+              {blocks[0].paragraph.rich_text[0].plain_text.split('-')[0]}
               <span className='font-normal'>
-                - a software engineer and tech enthusiast from Austria 🇦🇹.
+                - {blocks[0].paragraph.rich_text[0].plain_text.split('-')[1]}
               </span>
             </h1>
           </section>
 
           <section className='border-b border-divider pb-8 dark:border-slate-800 sm:border-b-2'>
             <h3 className='text-justify font-normal sm:max-w-[75%] md:max-w-[85%] lg:max-w-[75%]'>
-              I have extensive experience building both frontend and backend
-              applications with remote teams. Currently I'm working at Lean
-              Coders while also maintaining the Disease.sh API.
+              {blocks[1].paragraph.rich_text[0].plain_text}
             </h3>
           </section>
 
           <section>
             <h2 className='mb-8 font-medium'>What I work on</h2>
             <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-              {projectData.map((project, i) => (
-                <ProjectCard key={i} {...project} />
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {blocks[2].results.map(({ id, properties }: any) => (
+                <ProjectCard
+                  key={id}
+                  title={properties['Title'].title[0].plain_text}
+                  description={
+                    properties['Description'].rich_text[0].plain_text
+                  }
+                  icon={{ base64: properties['Image'].rich_text[0].plain_text }}
+                  url={properties['URL'].url}
+                  tag={
+                    properties['Tag'].rich_text[0] && [
+                      properties['TagIcon'].rich_text[0]?.plain_text ?? '',
+                      properties['Tag'].rich_text[0].plain_text,
+                    ]
+                  }
+                  badge={
+                    properties['Badge'].rich_text[0] && [
+                      properties['BadgeIcon'].rich_text[0]?.plain_text ?? '',
+                      properties['Badge'].rich_text[0].plain_text,
+                    ]
+                  }
+                />
               ))}
             </div>
           </section>
