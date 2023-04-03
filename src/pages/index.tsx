@@ -30,10 +30,15 @@ export async function getStaticProps() {
     blockRes.results.map(async (r: any) =>
       r.type !== 'child_database'
         ? r
-        : await notion.databases.query({
-            database_id: r.id,
-            sorts: [{ timestamp: 'created_time', direction: 'ascending' }],
-          })
+        : await notion.databases
+            .query({
+              database_id: r.id,
+              sorts: [{ timestamp: 'created_time', direction: 'ascending' }],
+            })
+            .then((db) => ({
+              title: r.child_database.title,
+              entries: db.results,
+            }))
     )
   );
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -73,10 +78,10 @@ export default function HomePage({
           </section>
 
           <section>
-            <h2 className='mb-8 font-medium'>What I work on</h2>
+            <h2 className='mb-8 font-medium'>{blocks[2].title}</h2>
             <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
               {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              {blocks[2].results.map(({ id, properties }: any) => (
+              {blocks[2].entries.map(({ id, properties }: any) => (
                 <ProjectCard
                   key={id}
                   title={properties['Title'].title[0].plain_text}
