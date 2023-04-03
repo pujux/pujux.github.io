@@ -20,12 +20,10 @@ export async function getStaticProps() {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
-  const page = (await notion.pages.retrieve({
-    page_id: '5673a213b29448369d351d9405f456ff',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  })) as any;
 
-  const blockRes = await notion.blocks.children.list({ block_id: page.id });
+  const blockRes = await notion.blocks.children.list({
+    block_id: '5673a213b29448369d351d9405f456ff',
+  });
 
   const blocks = await Promise.all(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,11 +37,10 @@ export async function getStaticProps() {
     )
   );
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return { props: { page, blocks: blocks as any[] } };
+  return { props: { blocks: blocks as any[] } };
 }
 
 export default function HomePage({
-  page,
   blocks,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -56,7 +53,7 @@ export default function HomePage({
               <NextImage
                 width={128}
                 height={128}
-                src={page.cover?.file?.url ?? '/images/profile.png'}
+                src='/images/profile.png'
                 alt='Profile picture'
                 useSkeleton
               />
