@@ -22,7 +22,14 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = ({
   badge,
 }) => {
   return (
-    <a href={url} className='flex' target='_blank' rel='noopener noreferrer'>
+    <a
+      href={url}
+      className='flex'
+      target='_blank'
+      rel='noopener noreferrer'
+      data-umami-event='Open project'
+      data-umami-event-project={{ title }}
+    >
       <div className='group relative mx-auto flex w-[512px] max-w-full cursor-pointer flex-col gap-2 rounded-xl bg-secondary p-4 drop-shadow-md transition-all hover:scale-[1.025] hover:drop-shadow-xl dark:bg-slate-900 md:w-full'>
         {badge && (
           <span className='absolute top-0 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 whitespace-nowrap rounded-md border-2 border-secondary bg-accent px-2 text-sm dark:border-slate-900 dark:bg-dark-accent'>
